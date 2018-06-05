@@ -3,19 +3,35 @@
 
 {% block section %}
  	<h2>
- 		{{ object.nombre }}
+ 	Nombre:	{{ object.nombre }}
  		{% if object.nombre %}
- 			&#9733;
 		{% else %}
- 			&#9734;
  		{% endif %}
- 		{% if object.identificacion %}
-			 ( <a href="{% url "reserva-detail" object.identificacion %}">{{object.reserva }}</a> )
+ 	</h2>
+ 	<h2>
+
+ 	Apellido:	{{ object.apellido }}
+ 		{% if object.apellido %}
+		{% else %}
+ 		{% endif %}
+ 	</h2>
+ 	 <h2>
+ 	Telefono:	{{ object.telefono }}
+ 		{% if object.telefono %}
+		{% else %}
+ 		{% endif %}
+
+ 	</h2>
+ 	<h2>
+
+ 	Email:	{{ object.email }}
+ 		{% if object.email %}
+		{% else %}
  		{% endif %}
  	</h2>
  	
- 	<a href="{% url "cliente-update" object.identificacion %}">edit</a>
- 	<a href="{% url "cliente-delete" object.identificacion %}">delete</a>
+ 	<a href="{% url "cliente-update" object.identificacion %}">Editar</a>
+ 	<a href="{% url "cliente-delete" object.identificacion %}">Eliminar</a>
  	<hr>
 {% endblock section %}
 

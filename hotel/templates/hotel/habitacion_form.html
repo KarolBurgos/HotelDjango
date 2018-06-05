@@ -2,7 +2,7 @@
 {% block maincontent %}
  	<form enctype="multipart/form-data" method="post"> {% csrf_token %}
  		{{ form.as_p }}
- 		<button type="submit">Save</button>
+ 		<button class="btn btn-primary" type="submit">Save</button>
  		<a class='btn' href="{% url 'habitacion-list' %}">Cancel</a>
  	</form>
 {% endblock maincontent%} 
