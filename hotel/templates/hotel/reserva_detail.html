@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block section %}
+ 	<h2>
+ 		{{ object.tipo }}
+ 		{% if object.tipo %}
+ 			&#9733;
+		{% else %}
+ 			&#9734;
+ 		{% endif %}
+ 		{% if object.idCliente %}
+			 ( <a href="{% url "reserva-detail" object.id %}">{{object.reserva }}</a> )
+ 		{% endif %}
+ 	</h2>
+ 	<p><strong>comments: </strong>{{ object.comment|default:"no comments" }}</p>
+ 	<a href="{% url "reserva-update" object.id %}">edit</a>
+ 	<a href="{% url "reserva-delete" object.id %}">delete</a>
+ 	<hr>
+{% endblock section %}
+
+{% block maincontent %}
+
+{% endblock maincontent %} 

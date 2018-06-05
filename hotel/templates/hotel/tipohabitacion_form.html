@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block maincontent %}
+ <div class="col-md-4 well">
+ 	<div class="panel panel-primary">
+ 	<form enctype="multipart/form-data" method="post"> 
+ 		{% csrf_token %}
+ 		{{ form.as_p }}
+ 		
+ 		<button type="submit">Save</button>
+ 		<a class='btn' href="{% url 'tipohabitacion-list' %}">Cancel</a>
+ 	</form>
+ </div>
+</div>
+{% endblock maincontent%} 

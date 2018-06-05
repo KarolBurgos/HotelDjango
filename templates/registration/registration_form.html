@@ -1,0 +1,45 @@
+
+{% load i18n %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+{% block content %}
+<br/>
+<br/>
+<div align="rigth"  class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+            	<div class="panel panel-login">
+                        <div class="row">
+                          <div class="col-md-6 col-md-offset-3">
+                            <div class="form-group">
+							<form method="post" action="">
+  							  {% csrf_token %}
+   								 {{ form.as_p }}
+   					 <input class="btn btn-primary" type="submit" value="{% trans 'Submit' %}" />
+						</form>
+						  </div>
+						        </div>
+						    </div>
+						      </div>
+						        </div>
+						    </div>
+						    </div>
+<body background="http://localhost/imagenespagina/img5.jpg">
+
+</body>
+{% endblock %} 
+
+
+{% comment %}
+**registration/registration_form.html**
+Used to show the form users will fill out to register. By default, has
+the following context:
+
+``form``
+    The registration form. This will be an instance of some subclass
+    of ``django.forms.Form``; consult `Django's forms documentation
+    <http://docs.djangoproject.com/en/dev/topics/forms/>`_ for
+    information on how to display this in a template.
+{% endcomment %}

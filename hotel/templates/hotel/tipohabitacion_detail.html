@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block section %}
+ 	<h2>
+ 		{{ object.tipo }}
+ 		{% if object.tipo %}
+		{% else %}
+ 		{% endif %}
+ 		{% if object.id %}
+			 
+ 		{% endif %}
+ 	</h2>
+ 	<p><strong>comments: </strong>{{ object.reserva|default:"Habitacion a ofrecer" }}</p>
+ 	<a href="{% url "tipohabitacion-update" object.id %}">Edit</a>
+ 	<a href="{% url "tipohabitacion-delete" object.id %}">Delete</a>
+ 	<hr>
+{% endblock section %}
+
+{% block maincontent %}
+<div>
+ 	<div>
+ 		<img src="{% static object.photo.url %}"style="width:550px;height:420px"/>
+ 	</div>
+</div>
+{% endblock maincontent %} 

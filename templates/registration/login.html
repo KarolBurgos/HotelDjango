@@ -1,0 +1,108 @@
+
+
+{% load i18n %}
+
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>Hotel</title>
+ <!-- CDN Bootstrap -->
+  <link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+ <link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<br/>
+<br/>
+<br/>
+<br/>
+<body background="http://localhost/imagenespagina/img5.jpg">
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-login">
+                    <div class="panel-heading">
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <a href="#" class="active" id="login-form-link">Iniciar sesión</a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="{% url 'registration_register' %}" id="register-form-link">Regístrate ahora</a>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                        <div class="row">
+                          <div class="col-md-6 col-md-offset-3">
+                            <div class="form-group">
+                                <h3 align="center">INICIO DE SESION</h3>
+                             </div>
+                            </div>
+                        </div> 
+                    <div class="panel-body">
+                        <div class="row">
+                            <div align="center" class="col-lg-12">
+                                <form id="login-form" process" method="post" role="form" style="display: block;">
+                                                {% csrf_token %}
+                                               {{ form.as_p }}
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div align="center" class="col-sm-6 col-sm-offset-3">
+                                                <input class="btn btn-primary" type="submit" value="{% trans 'Log in' %}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="text-center">
+                                                    <a href="{% url 'auth_password_reset' %}" tabindex="5" class="forgot-password">¿Has olvidado tu contraseña?</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% comment %}
+**registration/login.html**
+
+It's your responsibility to provide the login form in a template called
+registration/login.html by default. This template gets passed four
+template context variables:
+
+``form``
+    A Form object representing the login form. See the forms
+    documentation for more on Form objects.
+
+``next``
+    The URL to redirect to after successful login. This may contain a
+    query string, too.
+
+``site``
+    The current Site, according to the SITE_ID setting. If you don't
+    have the site framework installed, this will be set to an instance
+    of RequestSite, which derives the site name and domain from the
+    current HttpRequest.
+
+``site_name``
+    An alias for site.name. If you don't have the site framework
+    installed, this will be set to the value of
+    request.META['SERVER_NAME']. For more on sites, see The
+    "sites" framework.
+{% endcomment %}

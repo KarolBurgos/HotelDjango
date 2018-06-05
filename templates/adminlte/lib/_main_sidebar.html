@@ -1,0 +1,140 @@
+{% load adminlte_helpers %}
+<!-- Left side column. contains the sidebar -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        {% block user_panel %}
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="{% avatar_url size=90 %}" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p>{% firstof request.user.get_full_name request.user.username %}</p>
+            </div>
+        </div>
+        {% endblock %}
+
+        {% block form %}{% endblock %}
+
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        {% block nav_links_ul %}
+        <ul class="sidebar-menu">
+            {% block nav_links_outer %}
+            <li class="header">{% block nav_heading %}MAIN NAVIGATION{% endblock %}</li>
+
+            {% block nav_links %}
+                <li>
+                    <a href="{% url "habitacion-list" %}">
+                        <i class="fa fa-user"></i> <span>habitacion</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-upload"></i> <span>Pago</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{% url "pago-create" %}">
+                                <i class="fa fa-taxi"></i> Agregar Pagos 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url "pago-list" %}">
+                                <i class="fa fa-user"></i> Mostrar Pagos
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-upload"></i> <span>Reserva</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{% url "reserva-create" %}">
+                                <i class="fa fa-taxi"></i> Agregar Reservas 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url "reserva-list" %}">
+                                <i class="fa fa-user"></i> Mostrar Reservas
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-upload"></i> <span>Cliente</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{% url "cliente-create" %}">
+                                <i class="fa fa-taxi"></i> Agregar Cliente 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url "cliente-list" %}">
+                                <i class="fa fa-user"></i> Mostrar Clientes
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-upload"></i> <span>Tipo de Habitación</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{% url "tipohabitacion-create" %}">
+                                <i class="fa fa-taxi"></i> Agregar Habitacion 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url "tipohabitacion-list" %}">
+                                <i class="fa fa-user"></i> Mostrar tipos de habitaciones
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-upload"></i> <span>Habitacion</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{% url "habitacion-create" %}">
+                                <i class="fa fa-taxi"></i> Agregar Habitacion 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url "habitacion-list" %}">
+                                <i class="fa fa-user"></i> Mostrar Habitaciones
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+            {% endblock nav_links %}
+            {% endblock nav_links_outer %}
+        </ul>
+        {% endblock nav_links_ul %}
+    </section>
+    <!-- /.sidebar -->
+</aside>

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block section %}
+ 	<h2>Pago</h2>
+ 	<hr>
+{% endblock section %}
+{% block maincontent %}
+ 	<div class="row well">
+ 		{% for p in object_list.all %}
+ 			<div class="col-md-4 well">
+ 				<div class="panel panel-primary">
+ 					<div class="panel-heading">
+ 					
+ 						<h3 class="panel-numero">{{ p.idCliente }}</h3>
+ 					
+						 
+ 					</div>
+ 					 <div class="panel-body">
+ 					 <div class="panel-body">
+ 					<a href="{% url "pago-detail" p.id %}">
+ 						<h5>Detalles</h5>
+ 					</a>
+ 				</div>
+<!--  					<a href="{% url "pago-delete" p.id %}">
+ 						<h5>Eliminar</h5>
+ 					</a> -->
+
+ 					</div>
+ 		</div>
+ 	</div>
+{% endfor %}
+</div>
+{% endblock maincontent %} 

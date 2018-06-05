@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block maincontent %}
+	 <form action=""method="post">{% csrf_token %}
+		<p>Delete "{{ object.identificacion }}"?</p>
+ 		<input type="submit"value="Confirm" />
+ 		<a class='btn'href="{% url 'pago-list' %}">Cancel</a>
+ 	</form>
+{% endblock maincontent %} 

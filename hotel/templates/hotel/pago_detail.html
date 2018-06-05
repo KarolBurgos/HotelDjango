@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block section %}
+ 	<h2>
+
+ 		{{ object.idCliente }}
+ 		{% if object.idCliente %}
+		{% else %}
+ 		{% endif %}
+
+ 		{% if object.identificacion %}
+			 ( <a href="{% url "reserva-detail" object.id %}">{{object.reserva }}</a> )
+ 		{% endif %}
+ 	</h2>
+
+ 	<h2>
+ 		{{ object.total }}
+ 		{% if object.total %}
+		{% else %}
+ 		{% endif %}
+ 		{% if object.identificacion %}
+			 ( <a href="{% url "reserva-detail" object.id %}">{{object.reserva }}</a> )
+ 		{% endif %}
+ 	</h2>
+<!--  	<a href="{% url "pago-update" object.id %}">Editar</a>
+ 	<a href="{% url "pago-delete" object.id %}">Eliminar</a> -->
+ 	<hr>
+{% endblock section %}
+
+{% block maincontent %}
+
+{% endblock maincontent %} 

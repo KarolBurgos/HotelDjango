@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HotelPasto</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Rubik:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="http://papaveraceous-surpl.000webhostapp.com/css/bootstrap.css">
+    <link rel="stylesheet" href="http://papaveraceous-surpl.000webhostapp.com/css/animate.css">
+    <link rel="stylesheet" href="http://papaveraceous-surpl.000webhostapp.com/css/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="http://papaveraceous-surpl.000webhostapp.com/fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="http://papaveraceous-surpl.000webhostapp.com/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://papaveraceous-surpl.000webhostapp.com/css/magnific-popup.css">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="http://papaveraceous-surpl.000webhostapp.com/css/style.css">
+  </head>
+  <body>
+    
+    <header role="banner">
+     
+      <nav class="navbar navbar-expand-md navbar-dark bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="{% url "base" %}">HotelPasto</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+            <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clientes</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="{% url "cliente-list" %}">Ver Clientes</a>
+                  <a class="dropdown-item" href="{% url "cliente-create" %}">Agregar Clientes</a>
+                </div>
+
+              </li>
+               <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reservas</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="{% url "reserva-list" %}">Ver Reserva</a>
+                  <a class="dropdown-item" href="{% url "reserva-create" %}">Agregar Reserva</a>
+                </div>
+
+              </li>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url "pago-list" %}">Pagos</a>
+              </li>
+             <li class="nav-item">
+                <a class="nav-link" href="{% url "habitacion-list" %}">Habitaciones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url "tiporeserva-list" %}">Tipo Reserva</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url "tipohabitacion-list" %}">Tipo de habitaciones</a>
+              </li>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="{% url "login"%}">Salir</a>
+                </div>
+
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- END header -->
+
+    <section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(http://papaveraceous-surpl.000webhostapp.com/images/img7.jpg);">
+      <div class="container">
+        <div class="row align-items-center site-hero-inner justify-content-center">
+          <div class="col-md-12 text-center">
+
+            <div class="mb-5 element-animate">
+              <h1>Bienvenido a HotelPasto</h1>
+              <p>Hotel Pasto cuenta con 60 habitaciones y ofrece, para la comodidad de sus clientes, espacios amplios, bahía de acceso para vehículos, parqueadero (60 vehículos), restaurante, bar y vigilancia privada, entre otros muchos servicios.</p>
+              <p><a href="{% url "reserva-create" %}" class="btn btn-primary">Reservación</a></p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <br>
+    <br>
+    <!-- END section -->
+	 <div class="container">
+		 {% block section %}
+		 {% endblock section %}
+	 </div>
+	 <div class="container">
+		 {% block maincontent %}
+		 {% endblock maincontent %}
+	 </div>
+   <section class="site-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-4">
+            <div class="heading-wrap text-center element-animate">
+              <h4 class="sub-heading">Hotel Pasto</h4>
+              <h2 class="heading">Bievenidos a Hotel Pasto</h2>
+              <p class="mb-5">se encuentra ubicado en Pasto, la ciudad sorpresa de Colombia, popular por la amabilidad y la calidez de sus gentes. Situados en el mejor y más tranquilo sector residencial de la ciudad, el hotel se perfila como la elección ideal para la celebración de todo tipo de eventos y convenciones, ya sean de carácter profesional o lúdico-familiar.
+
+              Tierra bendecida con paisajes multicolor, donde múltiples tonalidades de verdes visten los valles y volcanes, este singular paraje de Colombia es cuna de artistas, artesanos y cultura sin igual. Toda una promesa de experiencias turísticas o de negocios sin igual.</p>
+              
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-7">
+            <img src="http://papaveraceous-surpl.000webhostapp.com/images/f_img_1.png" alt="Image placeholder" class="img-md-fluid">
+          </div>
+        </div>
+      </div>
+    </section>
+   
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-4">
+            <h3>Comunicate</h3>
+            <p class="lead"><a href="tel://">+ 57 3113870611</a></p>
+          </div>
+          <div class="col-md-4">
+            <h3>Conectate</h3>
+            <p>Redes Sociales</p>
+            <p>
+              <a href="https://www.facebook.com/karitoburgosnarvaez" class="pl-0 p-3"><span class="fa fa-facebook"></span></a>
+              <a href="https://www.instagram.com/karoburgosn/?hl=es-la" class="p-3"><span class="fa fa-instagram"></span></a>
+              <a href="https://www.youtube.com/channel/UCiEvIRAsgaC79ewuIL0IZQg?view_as=subscriber" class="p-3"><span class="fa fa-youtube-play"></span></a>
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h3>Dirección</h3>
+            <p>Cra 32 N° 51-24 Avenida los estudiantes</p>
+            
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-7 text-center">
+            &copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Politica de privacidad</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END footer -->
+    
+    <!-- loader -->
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
+
+    <script src="http://papaveraceous-surpl.000webhostapp.com/js/jquery-3.2.1.min.js"></script>
+    <script src="http://papaveraceous-surpl.000webhostapp.com/js/jquery-migrate-3.0.0.js"></script>
+    <script src="http://papaveraceous-surpl.000webhostapp.com/js/popper.min.js"></script>
+    <script src="http://papaveraceous-surpl.000webhostapp.com/js/bootstrap.min.js"></script>
+    <script src="http://papaveraceous-surpl.000webhostapp.com/js/owl.carousel.min.js"></script>
+    <script src="http://papaveraceous-surpl.000webhostapp.com/js/jquery.waypoints.min.js"></script>
+    <script src="http://papaveraceous-surpl.000webhostapp.com/js/jquery.stellar.min.js"></script>
+
+    <script src="http://papaveraceous-surpl.000webhostapp.com/js/jquery.magnific-popup.min.js"></script>
+    <script src="http://papaveraceous-surpl.000webhostapp.com/js/magnific-popup-options.js"></script>
+
+    <script src="http://papaveraceous-surpl.000webhostapp.com/js/main.js"></script>
+  </body>
+</html>

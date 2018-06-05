@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block section %}
+ 	<h2>Tipo Habitacion</h2>
+ 	<hr>
+{% endblock section %}
+{% block maincontent %}
+ 	<div class="row well">
+ 		{% for p in object_list.all %}
+ 			<div class="col-md-4 well">
+ 				<div class="panel panel-primary">
+ 					<div class="panel-heading">
+						 <h3 class="panel-numero">{{ p.tipo }}</h3>
+ 					</div>
+ 				</div>
+ 				 			 <div class="panel-body">
+ 					<a href="{% url "tipohabitacion-detail" p.id %}">
+ 						<img src="{% static p.photo.url %}" style="width:200px;height:200px;"/>
+ 					</a>
+ 				</div>
+
+ 				<div class="panel-body">
+ 					<a href="{% url "tipohabitacion-detail" p.id %}">
+ 						<h5>Editar</h5>
+ 					</a>
+ 				</div>
+ 			</div>
+
+
+{% endfor %}
+</div>
+{% endblock maincontent %} 
